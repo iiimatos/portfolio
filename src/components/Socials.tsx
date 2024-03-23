@@ -3,26 +3,27 @@ import { Simple } from "./icons";
 
 const socials = [
   {
-    href: "https://github.com",
+    href: "https://github.com/iiimatos",
     name: "GitHub",
     icon: Simple.IconGitHub,
   },
   {
-    href: "https://x.com",
-    name: "X",
-    icon: Simple.IconX,
+    href: "https://www.linkedin.com/in/ivan-ernesto-matos-villar-a00b581b3/",
+    name: "Linkedin",
+    icon: Simple.IconLinkedin,
   },
   {
-    href: "https://www.youtube.com",
-    name: "Youtube",
-    icon: Simple.IconYoutube,
+    href: "mailto:ivanmatosvillar@gmail.com",
+    name: "Message",
+    icon: Simple.IconMessage,
   },
 ];
 
 export default () => {
   return (
-    <div className="flex items-center justify-center p-4 md:p-5 xl:p-6 w-full h-full">
-      <ul className="flex items-center justify-center gap-3">
+    <div>
+      <h2 className="font-medium text-xl mb-3">Socials</h2>
+      <ul className="flex items-center justify-center gap-3 p-1">
         {socials.map((social) => {
           return (
             <li key={social.name}>
@@ -30,7 +31,7 @@ export default () => {
                 href={social.href}
                 className={cn(
                   "group",
-                  "flex items-center justify-center w-16 h-16 md:w-20 md:h-20 xl:w-16 xl:h-16",
+                  "flex items-center justify-center w-16 h-16 lg:w-20 lg:h-20",
                   "bg-neutral-2 hover:bg-neutral-3",
                   "outline-none border border-neutral-4 hover:border-neutral-6 rounded-3xl",
                   "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-neutral-7 focus-visible:ring-offset-neutral-1"

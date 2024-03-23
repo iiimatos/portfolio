@@ -51,3 +51,10 @@ export const IconImage = create(
     <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
   </>
 );
+
+export const IconUser = create(
+  <>
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </>
+);
