@@ -40,7 +40,7 @@ export const stacks = [
     url: "https://tailwindcss.com",
   },
   {
-    name: "Testing Library",
+    name: "Jest",
     category: "Library",
     icon: Simple.IconTesting,
     url: "https://testing-library.com",
