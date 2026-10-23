@@ -1,0 +1,22 @@
+---
+import { navigation } from '../data/site';
+---
+
+<header class="border-b border-white/[0.08]" aria-label="Primary navigation">
+  <div class="container-wide flex min-h-[72px] items-center justify-between gap-6">
+    <a href="/" class="group flex items-center gap-3" aria-label="Ivan Matos home">
+      <span class="flex h-8 w-8 items-center justify-center border border-white/20 bg-white/[0.04] font-mono text-[11px] text-white transition-colors group-hover:border-violet-400">IM</span>
+      <span class="leading-none">
+        <span class="block text-[13px] font-bold tracking-[-0.04em] text-white">Ivan Matos</span>
+        <span class="mt-1 block font-mono text-[8px] uppercase tracking-[0.2em] text-zinc-500">Software Engineer</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-7 md:flex" aria-label="Section navigation">
+      {navigation.map((item) => <a class="font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-400 transition-colors hover:text-white" href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <a class="button-secondary hidden min-h-9 px-3 text-[9px] sm:inline-flex" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    <a class="font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-300 md:hidden" href="#contact">Contact ↗</a>
+  </div>
+</header>

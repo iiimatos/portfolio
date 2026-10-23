@@ -1,0 +1,24 @@
+{
+  "name": "ivan-matos-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/sitemap": "^3.5.0",
+    "astro": "^5.13.5",
+    "motion": "^12.23.12",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@tailwindcss/vite": "^4.1.13",
+    "typescript": "^5.9.2"
+  }
+}

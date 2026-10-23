@@ -1,0 +1,304 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Terminal from "../components/Terminal.astro";
+import WorkCard from "../components/WorkCard.astro";
+import { expertise, experience, process } from "../data/site";
+
+const projects = (await getCollection("projects")).filter(
+  (project) => project.data.featured,
+);
+---
+
+<BaseLayout>
+  <div id="top"></div>
+  <section
+    class="relative overflow-hidden border-b border-white/[0.08]"
+    aria-labelledby="hero-title"
+  >
+    <div
+      class="absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(ellipse_at_75%_18%,rgba(115,87,246,0.19),transparent_52%)]"
+    >
+    </div>
+    <div class="container-wide relative">
+      <div
+        class="flex items-center justify-between border-b border-white/[0.1] py-3 font-mono text-[9px] uppercase tracking-[0.16em] text-zinc-500"
+        data-hero-item
+      >
+        <span>IVAN MATOS / NO. 001 / SOFTWARE ENGINEER</span>
+        <span class="hidden items-center gap-2 text-zinc-300 sm:flex"
+          ><i
+            class="h-1.5 w-1.5 rounded-full bg-violet-400 shadow-[0_0_12px_#7357f6]"
+          ></i> Open to good problems</span
+        >
+      </div>
+      <div
+        class="grid items-center gap-12 py-12 md:grid-cols-[1.04fr_0.96fr] md:gap-14 md:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:py-20"
+      >
+        <div class="relative z-10" data-hero-item>
+          <p class="eyebrow">Software Engineer / Product-minded</p>
+          <h1
+            id="hero-title"
+            class="mt-7 max-w-[600px] text-[clamp(3.6rem,8vw,7.25rem)] font-extrabold leading-[0.85] tracking-[-0.095em] text-white"
+          >
+            Code<br /><em class="font-extrabold text-zinc-200">is craft.</em>
+          </h1>
+          <div
+            class="mt-8 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-300"
+          >
+            <span class="h-px w-8 bg-violet-400"></span><span>Ivan Matos</span
+            ><span class="text-zinc-600">/</span><span class="text-zinc-500"
+              >Engineering · Architecture · Products</span>
+          </div>
+          <p
+            class="mt-7 max-w-[500px] text-sm leading-7 text-zinc-400 sm:text-[15px]"
+          >
+            I design and build software with a bias for clarity — from the first
+            system boundary to the last interaction that makes a product feel
+            right.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="button-primary" href="#contact"
+              >Start a conversation <span aria-hidden="true">↗</span></a
+            >
+            <a class="button-secondary" href="#work"
+              >See selected work <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+        <div data-hero-item><Terminal /></div>
+      </div>
+      <div
+        class="grid grid-cols-2 border-t border-white/[0.1] sm:grid-cols-4"
+        data-hero-item
+      >
+        <div class="hero-stat border-r border-white/[0.1] py-5 sm:px-5">
+          <strong class="block text-2xl font-bold tracking-[-0.07em] text-white"
+            >FOCUS</strong
+          ><span
+            class="mt-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-500"
+            >engineering / products</span>
+        </div>
+        <div class="hero-stat border-r-0 py-5 sm:border-r sm:px-5">
+          <strong class="block text-2xl font-bold tracking-[-0.07em] text-white"
+            >LENS</strong
+          ><span
+            class="mt-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-500"
+            >systems thinking</span>
+        </div>
+        <div
+          class="hero-stat border-r border-t border-white/[0.1] py-5 sm:border-t-0 sm:px-5"
+        >
+          <strong class="block text-2xl font-bold tracking-[-0.07em] text-white"
+            >MODE</strong
+          ><span
+            class="mt-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-500"
+            >architecture / UX</span>
+        </div>
+        <div class="hero-stat border-t border-white/[0.1] py-5 sm:border-t-0 sm:px-5">
+          <strong class="block text-2xl font-bold tracking-[-0.07em] text-white"
+            >LANG</strong
+          ><span
+            class="mt-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-500"
+            >English first</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="about"
+    class="container-wide grid gap-12 py-24 md:grid-cols-[0.8fr_1.2fr] md:py-32"
+    aria-labelledby="about-heading"
+  >
+    <SectionHeading
+      id="about-heading"
+      eyebrow="01 / About"
+      title="Make it useful. Make it last."
+    />
+    <div class="reveal max-w-[590px] md:pt-10">
+      <p
+        class="text-2xl font-semibold leading-[1.25] tracking-[-0.05em] text-white sm:text-3xl"
+      >
+        Good software is a conversation between an idea and its constraints.
+      </p>
+      <p class="mt-7 text-[15px] leading-8 text-zinc-400">
+        I care about the invisible work that makes a product feel inevitable:
+        the right boundary, the readable API, the thoughtful empty state. My
+        practice sits between engineering and product, where decisions become
+        systems and systems become experiences.
+      </p>
+      <p class="mt-5 text-[15px] leading-8 text-zinc-400">
+        This portfolio is a living workspace. It is intentionally precise about
+        what is verified and what still needs to be filled in.
+      </p>
+    </div>
+  </section>
+
+  <section
+    id="expertise"
+    class="border-y border-white/[0.08] bg-white/[0.015]"
+    aria-labelledby="expertise-heading"
+  >
+    <div class="container-wide py-24 md:py-32">
+      <SectionHeading
+        id="expertise-heading"
+        eyebrow="02 / Expertise"
+        title="The shape of the work matters."
+        description="A practical set of disciplines for turning complex product problems into calm, maintainable software."
+      />
+      <div class="mt-16 grid border-t border-white/[0.1] md:grid-cols-2">
+        {
+          expertise.map((item) => (
+            <article class="reveal border-b border-white/[0.1] py-7 md:nth-[odd]:border-r md:nth-[odd]:pr-8 md:nth-[even]:pl-8">
+              <div class="flex items-start justify-between gap-4">
+                <>
+                  <span class="font-mono text-[10px] text-violet-300">
+                    {item.number}
+                  </span>
+                  <span class="font-mono text-[9px] uppercase tracking-[0.12em] text-zinc-600">
+                    {item.tools.join(" · ")}
+                  </span>
+                </>
+              </div>
+              <h3 class="mt-8 text-2xl font-bold tracking-[-0.06em] text-white">
+                {item.title}
+              </h3>
+              <p class="mt-3 max-w-[380px] text-sm leading-7 text-zinc-400">
+                {item.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="work"
+    class="container-wide py-24 md:py-32"
+    aria-labelledby="work-heading"
+  >
+    <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+      <SectionHeading
+        id="work-heading"
+        eyebrow="03 / Selected work"
+        title="A few things worth showing."
+        description="Case studies are managed as MDX content, so each project can grow into a clear, readable story."
+      />
+      <span
+        class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600"
+        >{projects.length.toString().padStart(2, "0")} entries / curated</span
+      >
+    </div>
+    <div class="mt-14 grid gap-4 md:grid-cols-2">
+      {projects.map((project) => <WorkCard project={project} />)}
+    </div>
+  </section>
+
+  <section
+    id="experience"
+    class="border-y border-white/[0.08] bg-white/[0.015]"
+    aria-labelledby="experience-heading"
+  >
+    <div
+      class="container-wide grid gap-12 py-24 md:grid-cols-[0.8fr_1.2fr] md:py-32"
+    >
+      <SectionHeading
+        id="experience-heading"
+        eyebrow="04 / Experience"
+        title="The work behind the work."
+        description="A factual timeline belongs here. The current entries are explicit placeholders until verified experience is supplied."
+      />
+      <div class="reveal border-t border-white/[0.1]">
+        {
+          experience.map((item) => (
+            <article class="grid gap-3 border-b border-white/[0.1] py-7 sm:grid-cols-[130px_1fr]">
+              <>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-violet-300">
+                  {item.period}
+                </p>
+                <div>
+                  <>
+                    <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
+                      {item.company}
+                    </p>
+                    <h3 class="mt-2 text-lg font-bold tracking-[-0.04em] text-white">
+                      {item.role}
+                    </h3>
+                    <p class="mt-2 max-w-[480px] text-sm leading-7 text-zinc-400">
+                      {item.description}
+                    </p>
+                  </>
+                </div>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="process"
+    class="container-wide py-24 md:py-32"
+    aria-labelledby="process-heading"
+  >
+    <SectionHeading
+      id="process-heading"
+      eyebrow="05 / Process"
+      title="Small loops. Strong foundations."
+      description="The process stays flexible, but the principles stay visible."
+    />
+    <div
+      class="mt-14 grid border-t border-white/[0.1] sm:grid-cols-2 lg:grid-cols-4"
+    >
+      {
+        process.map(([number, title, description]) => (
+          <article class="reveal border-b border-white/[0.1] py-7 sm:px-5 sm:nth-[odd]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
+            <>
+              <span class="font-mono text-[10px] text-violet-300">
+                {number}
+              </span>
+              <h3 class="mt-12 text-xl font-bold tracking-[-0.05em] text-white">
+                {title}
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-zinc-400">{description}</p>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    id="contact"
+    class="relative overflow-hidden border-t border-white/[0.08]"
+    aria-labelledby="contact-title"
+  >
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(52,120,246,0.16),transparent_48%)]"
+    >
+    </div>
+    <div
+      class="container-wide relative flex flex-col justify-between gap-12 py-24 md:flex-row md:items-end md:py-32"
+    >
+      <div class="reveal">
+        <p class="eyebrow">06 / Contact</p><h2
+          id="contact-title"
+          class="mt-7 max-w-[720px] text-5xl font-extrabold leading-[0.9] tracking-[-0.09em] text-white sm:text-7xl"
+        >
+          Have a good<br /><em class="text-zinc-300">problem?</em>
+        </h2>
+      </div>
+      <div class="reveal max-w-[300px] md:pb-1">
+        <p class="text-sm leading-7 text-zinc-400">
+          Tell me what you are building, what is getting in the way, and what
+          better could look like.
+        </p><a class="button-primary mt-7" href="mailto:hello@ivanmatos.dev"
+          >Email Ivan <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

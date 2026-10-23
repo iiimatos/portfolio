@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  align?: 'left' | 'right';
+  id?: string;
+}
+
+const { eyebrow, title, description, align = 'left', id } = Astro.props;
+---
+
+<div class:list={["reveal", "flex", "flex-col", "gap-4", align === 'right' ? 'items-end text-right' : 'items-start']}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 id={id} class="max-w-[620px] text-4xl font-extrabold leading-[0.98] tracking-[-0.07em] text-white sm:text-5xl">{title}</h2>
+  {description && <p class="max-w-[480px] text-sm leading-7 text-zinc-400">{description}</p>}
+</div>

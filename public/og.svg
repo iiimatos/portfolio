@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#09090B"/>
+  <circle cx="930" cy="120" r="300" fill="url(#paint0_radial)"/>
+  <path d="M0 525H1200" stroke="#25252D"/>
+  <path d="M600 0V630" stroke="#1A1A20"/>
+  <text x="72" y="105" fill="#9B9BA6" font-family="monospace" font-size="18" letter-spacing="4">IVAN MATOS / SOFTWARE ENGINEER</text>
+  <text x="72" y="300" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="128" font-weight="700" letter-spacing="-8">Code</text>
+  <text x="72" y="420" fill="#D9D9DF" font-family="Arial, sans-serif" font-size="128" font-weight="700" font-style="italic" letter-spacing="-8">is craft.</text>
+  <text x="75" y="560" fill="#7357F6" font-family="monospace" font-size="18" letter-spacing="3">ENGINEERING · ARCHITECTURE · PRODUCTS</text>
+  <defs><radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 120) rotate(90) scale(300)"><stop stop-color="#7357F6" stop-opacity=".3"/><stop offset="1" stop-color="#7357F6" stop-opacity="0"/></radialGradient></defs>
+</svg>

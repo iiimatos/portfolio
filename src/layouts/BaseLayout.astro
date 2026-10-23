@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Ivan Matos — Software Engineer',
+  description = 'Ivan Matos is a software engineer focused on engineering, architecture, and product development.',
+} = Astro.props;
+const canonical = Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2316161d'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='24' fill='%23f5f5f7'%3EIM%3C/text%3E%3C/svg%3E" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${Astro.site ?? new URL('https://ivanmatos.dev')}/og.svg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <Header />
+      <main><slot /></main>
+      <footer class="border-t border-white/[0.08]">
+        <div class="container-wide flex flex-col justify-between gap-4 py-8 text-xs text-zinc-500 sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} Ivan Matos. Built with intent.</p>
+          <div class="flex items-center gap-5 font-mono text-[10px] uppercase tracking-[0.1em]"><a class="transition-colors hover:text-white" href="#top">Back to top ↑</a><span>EN / DO</span></div>
+        </div>
+      </footer>
+    </div>
+    <script src="../scripts/motion.ts"></script>
+  </body>
+</html>
