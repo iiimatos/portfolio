@@ -16,7 +16,7 @@ const { Content } = await render(project);
     <a href="/#work" class="link-arrow"><span aria-hidden="true">←</span> Back to selected work</a>
     <div class="mt-16 grid gap-12 border-b border-white/[0.1] pb-16 md:grid-cols-[1fr_0.65fr] md:items-end">
       <div><p class="eyebrow">{project.data.eyebrow}</p><h1 class="mt-7 max-w-[800px] text-5xl font-extrabold leading-[0.9] tracking-[-0.085em] text-white sm:text-7xl">{project.data.title}</h1></div>
-      <div class="grid grid-cols-2 gap-6 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-500"><div><span class="block text-zinc-700">Year</span><strong class="mt-2 block font-normal text-zinc-300">{project.data.year}</strong></div><div><span class="block text-zinc-700">Role</span><strong class="mt-2 block font-normal text-zinc-300">{project.data.role}</strong></div></div>
+      <div class="grid grid-cols-2 gap-6 font-mono text-[10px] uppercase tracking-[0.08em] text-zinc-500"><div><span class="block text-zinc-700">Status</span><strong class="mt-2 block font-normal text-zinc-300">{project.data.status}</strong></div><div><span class="block text-zinc-700">Role</span><strong class="mt-2 block font-normal text-zinc-300">{project.data.role}</strong></div></div>
     </div>
     <div class="prose-dark mx-auto mt-16 max-w-[720px]"><Content /></div>
   </article>

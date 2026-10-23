@@ -1,0 +1,149 @@
+---
+title: 'Mingo Platform'
+eyebrow: 'FEATURED / INDEPENDENT'
+summary: 'A multi-product SaaS ecosystem designed to bring organizations, identities, subscriptions, and digital services together under a unified platform.'
+status: 'In development'
+role: 'Founder / Software Engineer'
+type: 'Independent'
+tags: ['Next.js', 'NestJS', 'PostgreSQL', 'Keycloak', 'TypeScript']
+order: 1
+featured: true
+accent: 'violet'
+---
+
+## Building the foundation for an ecosystem
+
+Mingo Platform is the foundation of Mingo, an independent software ecosystem I'm building to create, manage, and deliver digital products for businesses and individuals.
+
+Rather than developing isolated applications, the vision behind Mingo is to establish a shared platform where products can coexist while maintaining their own business logic, capabilities, and user experiences.
+
+The platform provides the foundation for identity management, organizations, product discovery, subscriptions, access control, and service provisioning.
+
+## The challenge
+
+Building multiple software products introduces challenges that extend beyond individual applications.
+
+Each product needs its own domain and functionality, but several concerns are shared across the ecosystem:
+
+- Identity and authentication.
+- Organization and personal account management.
+- Roles, permissions, and authorization.
+- Product catalogs and subscription plans.
+- Feature availability and usage limits.
+- Application provisioning and lifecycle management.
+- Consistent experiences across independent products.
+
+The challenge is to centralize these shared capabilities without creating unnecessary dependencies between products.
+
+## Architecture and engineering
+
+Mingo Platform follows a modular architecture designed around clear domain boundaries and maintainability.
+
+The backend is built with NestJS, TypeScript, TypeORM, and PostgreSQL, applying Clean Architecture principles to separate business rules, application use cases, infrastructure, and HTTP interfaces.
+
+The frontend uses Next.js with the App Router, providing public product experiences, organizational management, and administrative interfaces.
+
+The architecture emphasizes:
+
+- Clear separation of domain, application, infrastructure, and presentation layers.
+- Explicit use cases and business rules.
+- Transactional consistency for critical operations.
+- Database migrations and controlled schema evolution.
+- Automated testing and continuous integration.
+- Independent evolution of platform capabilities.
+
+## Identity and access management
+
+One of the central engineering challenges has been designing identity management for different types of users.
+
+Mingo distinguishes between three identity contexts:
+
+- **Business accounts:** Users belonging to an organization.
+- **Personal accounts:** Individuals using products independently.
+- **Platform staff:** Internal administrators responsible for managing the ecosystem.
+
+These contexts are designed to remain independent, with separate authentication boundaries, permissions, and account lifecycles.
+
+Authentication is built around Keycloak and OpenID Connect, while application-level authorization remains controlled by the platform's business rules.
+
+The system uses role-based access control, permission evaluation, and explicit authorization decisions to protect organizational resources.
+
+## Products, plans, and subscriptions
+
+Mingo includes a product catalog that allows different applications to be registered and managed within the ecosystem.
+
+Each product can define its own subscription plans, capabilities, and usage limits.
+
+The subscription architecture incorporates:
+
+- Product and plan management.
+- Versioned plan configurations.
+- Feature entitlements.
+- Usage limits and enforcement.
+- Subscription lifecycle management.
+- Subscription events and overrides.
+
+A central entitlement engine evaluates which capabilities are available to an account based on its active subscriptions and applicable business rules.
+
+This allows products to share commercial infrastructure without duplicating subscription logic.
+
+## Building independent products
+
+Mingo Platform is designed to support multiple applications while preserving their individual domains.
+
+Two products currently shaping the ecosystem are:
+
+### Mingo Billing
+
+A web-first billing and commercial management product for businesses.
+
+It is being developed to integrate with Mingo's organizational identity and subscription infrastructure while maintaining its own billing domain.
+
+### Mingo Tribia
+
+A personal financial and tax organization product concept for independent professionals in the Dominican Republic.
+
+Its planned architecture introduces personal accounts as a distinct identity context, independent from organizational accounts.
+
+Together, these products influence how the platform handles identity, product access, and different types of customers.
+
+## Infrastructure and delivery
+
+Beyond application development, Mingo also involves designing the infrastructure required to operate and deploy its services.
+
+The development and deployment environment incorporates:
+
+- Docker and containerized applications.
+- PostgreSQL for relational persistence.
+- Keycloak for identity and authentication.
+- GitHub Actions for continuous integration.
+- Automated linting, type checking, testing, and builds.
+- VPS-based infrastructure and application deployment through Dokploy.
+
+The objective is to establish a reproducible development and deployment workflow that can evolve alongside the ecosystem.
+
+## My role
+
+As the founder and software engineer behind Mingo, I work across product definition, software architecture, backend development, frontend engineering, and infrastructure.
+
+My responsibilities include:
+
+- Defining the platform's technical direction.
+- Designing domain models and application boundaries.
+- Developing backend services and APIs.
+- Building frontend applications and administrative experiences.
+- Implementing identity, authorization, and subscription capabilities.
+- Establishing testing and deployment workflows.
+- Translating product requirements into technical solutions.
+
+The project allows me to approach software development from both an engineering and product-building perspective.
+
+## Current status
+
+**In active development**
+
+Mingo Platform has an evolving technical foundation covering identity, organizations, access control, product management, subscriptions, and deployment infrastructure.
+
+The ecosystem continues to evolve as individual products are developed and integrated.
+
+Mingo is an independent project under active development, not a completed or commercially established platform.

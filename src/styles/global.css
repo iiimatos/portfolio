@@ -340,6 +340,14 @@ a:focus-visible {
   transform: translateY(-4px);
 }
 
+.work-card.featured {
+  min-height: 324px;
+}
+
+.work-card[hidden] {
+  display: none;
+}
+
 .work-card::before {
   position: absolute;
   top: -50%;
@@ -365,6 +373,65 @@ a:focus-visible {
   flex-direction: column;
   justify-content: space-between;
   padding: 22px;
+}
+
+.work-card-status,
+.work-card-type {
+  color: #aaa0ff;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.work-card-type {
+  margin-bottom: 12px;
+  color: #777783;
+  letter-spacing: 0.06em;
+}
+
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border: 1px solid var(--line);
+  padding: 4px;
+}
+
+.work-filter {
+  border: 1px solid transparent;
+  padding: 9px 11px;
+  color: #777783;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.work-filter:hover,
+.work-filter.is-active {
+  border-color: rgba(115, 87, 246, 0.34);
+  background: rgba(115, 87, 246, 0.12);
+  color: #d2ccff;
+}
+
+.work-filter:focus-visible {
+  outline: 2px solid #a99bff;
+  outline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .work-card.featured {
+    grid-column: span 2;
+  }
+
+  .work-card.featured .work-card-content {
+    min-height: 318px;
+    padding: 28px;
+  }
 }
 
 .tag {

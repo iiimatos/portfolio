@@ -6,8 +6,8 @@ import Terminal from "../components/Terminal.astro";
 import WorkCard from "../components/WorkCard.astro";
 import { expertise, experience, process } from "../data/site";
 
-const projects = (await getCollection("projects")).filter(
-  (project) => project.data.featured,
+const projects = (await getCollection("projects")).sort(
+  (first, second) => first.data.order - second.data.order,
 );
 ---
 
@@ -193,15 +193,35 @@ const projects = (await getCollection("projects")).filter(
       <SectionHeading
         id="work-heading"
         eyebrow="03 / Selected work"
-        title="A few things worth showing."
-        description="Case studies are managed as MDX content, so each project can grow into a clear, readable story."
+        title="Things I've built."
+        description="A considered mix of independent products and professional work, with public detail only where it can be shared responsibly."
       />
-      <span
-        class="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600"
-        >{projects.length.toString().padStart(2, "0")} entries / curated</span
+      <div
+        class="work-filters reveal"
+        role="group"
+        aria-label="Filter selected work"
       >
+        <button
+          class="work-filter is-active"
+          type="button"
+          data-work-filter="all"
+          aria-pressed="true"
+        >All Work</button>
+        <button
+          class="work-filter"
+          type="button"
+          data-work-filter="professional"
+          aria-pressed="false"
+        >Professional</button>
+        <button
+          class="work-filter"
+          type="button"
+          data-work-filter="independent"
+          aria-pressed="false"
+        >Independent</button>
+      </div>
     </div>
-    <div class="mt-14 grid gap-4 md:grid-cols-2">
+    <div class="mt-14 grid gap-4 md:grid-cols-2" data-work-grid>
       {projects.map((project) => <WorkCard project={project} />)}
     </div>
   </section>
@@ -314,3 +334,24 @@ const projects = (await getCollection("projects")).filter(
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const filterButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-work-filter]'));
+  const workCards = Array.from(document.querySelectorAll<HTMLElement>('[data-work-card]'));
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.workFilter ?? 'all';
+
+      filterButtons.forEach((filterButton) => {
+        const isActive = filterButton === button;
+        filterButton.classList.toggle('is-active', isActive);
+        filterButton.setAttribute('aria-pressed', String(isActive));
+      });
+
+      workCards.forEach((card) => {
+        card.hidden = filter !== 'all' && card.dataset.workType !== filter;
+      });
+    });
+  });
+</script>
