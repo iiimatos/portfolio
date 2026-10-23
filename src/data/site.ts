@@ -35,16 +35,29 @@ export const expertise = [
 
 export const experience = [
   {
-    period: 'ADD DATES',
-    company: 'Verified experience placeholder',
-    role: 'Add your role and company',
-    description: 'Replace this entry with a verified role, scope, and outcome. No experience or metrics have been invented.',
+    period: 'APR 2024 — PRESENT',
+    company: 'United Capital Puesto de Bolsa, S.A.',
+    role: 'Software Engineer',
+    location: 'Santo Domingo, Dominican Republic',
+    description: [
+      'Development of enterprise applications and financial platforms.',
+      'Digital onboarding, customer management and transactional workflows.',
+      'Backend architecture, REST APIs, automation, auditing and enterprise integrations.',
+    ],
+    technologies: ['Next.js', 'React', 'NestJS', 'TypeScript', 'SQL Server', 'Azure'],
   },
   {
-    period: 'ADD DATES',
-    company: 'Verified experience placeholder',
-    role: 'Add your role and company',
-    description: 'Keep this section factual: describe the product context, your contribution, and the decisions you owned.',
+    period: 'SEP 2022 — APR 2024',
+    company: 'Liga Municipal Dominicana',
+    role: 'Full-Stack Developer',
+    location: 'Santo Domingo, Dominican Republic',
+    description: [
+      'Development of software solutions for municipal administration.',
+      'Backend development using C# and .NET.',
+      'Development of DocuTracker, a document tracking and transfer system using Next.js.',
+      'REST APIs, SQL Server and internal process automation.',
+    ],
+    technologies: ['C#', '.NET', 'Next.js', 'REST APIs', 'SQL Server'],
   },
 ] as const;
 

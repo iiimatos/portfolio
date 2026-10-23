@@ -217,31 +217,34 @@ const projects = (await getCollection("projects")).filter(
       <SectionHeading
         id="experience-heading"
         eyebrow="04 / Experience"
-        title="The work behind the work."
-        description="A factual timeline belongs here. The current entries are explicit placeholders until verified experience is supplied."
+        title="Where I've worked."
+        description="Professional experience across enterprise software, financial platforms, and municipal systems."
       />
-      <div class="reveal border-t border-white/[0.1]">
+      <div class="experience-timeline reveal">
         {
           experience.map((item) => (
-            <article class="grid gap-3 border-b border-white/[0.1] py-7 sm:grid-cols-[130px_1fr]">
-              <>
+            <article class="experience-item">
+              <span class="experience-marker" aria-hidden="true"></span>
+              <div class="experience-meta">
                 <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-violet-300">
                   {item.period}
                 </p>
-                <div>
-                  <>
-                    <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-500">
-                      {item.company}
-                    </p>
-                    <h3 class="mt-2 text-lg font-bold tracking-[-0.04em] text-white">
-                      {item.role}
-                    </h3>
-                    <p class="mt-2 max-w-[480px] text-sm leading-7 text-zinc-400">
-                      {item.description}
-                    </p>
-                  </>
+                <p class="mt-2 font-mono text-[10px] leading-5 text-zinc-600">
+                  {item.location}
+                </p>
+              </div>
+              <div class="experience-content">
+                <p class="experience-company">{item.company}</p>
+                <h3 class="mt-2 text-xl font-bold tracking-[-0.05em] text-white">
+                  {item.role}
+                </h3>
+                <ul class="experience-description">
+                  {item.description.map((line) => <li>{line}</li>)}
+                </ul>
+                <div class="experience-tags" aria-label={`${item.company} technologies`}>
+                  {item.technologies.map((technology) => <span>{technology}</span>)}
                 </div>
-              </>
+              </div>
             </article>
           ))
         }

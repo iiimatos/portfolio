@@ -442,6 +442,133 @@ a:focus-visible {
   color: var(--violet);
 }
 
+.experience-timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+.experience-timeline::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(115, 87, 246, 0.8), rgba(245, 245, 247, 0.1));
+  content: '';
+}
+
+.experience-item {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 30px;
+  transition: border-color 180ms ease;
+}
+
+.experience-item:first-child {
+  padding-top: 8px;
+}
+
+.experience-item:hover {
+  border-color: rgba(115, 87, 246, 0.38);
+}
+
+.experience-marker {
+  position: absolute;
+  top: 34px;
+  left: -23px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--violet);
+  box-shadow: 0 0 0 1px rgba(115, 87, 246, 0.55), 0 0 14px rgba(115, 87, 246, 0.25);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.experience-item:first-child .experience-marker {
+  top: 14px;
+}
+
+.experience-item:hover .experience-marker {
+  box-shadow: 0 0 0 3px rgba(115, 87, 246, 0.15), 0 0 18px rgba(115, 87, 246, 0.5);
+  transform: scale(1.15);
+}
+
+.experience-meta {
+  align-self: start;
+}
+
+.experience-company {
+  color: #aaa0ff;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.experience-item:hover .experience-company {
+  color: #c7bfff;
+}
+
+.experience-description {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  color: #a2a2ad;
+  font-size: 13px;
+  line-height: 1.7;
+  list-style: none;
+}
+
+.experience-description li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.experience-description li::before {
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 5px;
+  height: 1px;
+  background: var(--violet);
+  content: '';
+}
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.experience-tags span {
+  border: 1px solid rgba(245, 245, 247, 0.1);
+  padding: 5px 7px;
+  color: #858590;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.experience-item:hover .experience-tags span {
+  border-color: rgba(115, 87, 246, 0.28);
+  color: #aaa0ff;
+}
+
+@media (min-width: 640px) {
+  .experience-item {
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 24px;
+  }
+}
+
 @keyframes blink {
   50% { opacity: 0; }
 }
