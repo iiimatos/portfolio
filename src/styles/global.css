@@ -424,6 +424,87 @@ a:focus-visible {
   }
 }
 
+.contact-details {
+  max-width: 400px;
+}
+
+.contact-headline {
+  color: var(--text);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+
+.contact-headline em {
+  color: #aaa0ff;
+  font-style: normal;
+}
+
+.contact-description {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.contact-links {
+  margin-top: 42px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-links ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  color: #d8d8df;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, color 180ms ease, padding-left 180ms ease;
+}
+
+a.contact-link:hover {
+  border-color: rgba(115, 87, 246, 0.48);
+  color: white;
+  padding-left: 5px;
+}
+
+.contact-link-value {
+  color: #777783;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-align: right;
+  transition: color 180ms ease;
+}
+
+a.contact-link:hover .contact-link-value {
+  color: #aaa0ff;
+}
+
+.contact-link-pending {
+  color: #8a8a95;
+}
+
+.contact-link-pending .contact-link-value {
+  color: #5f5f69;
+}
+
+.contact-footer {
+  background: rgba(255, 255, 255, 0.015);
+}
+
 .work-card {
   position: relative;
   overflow: hidden;

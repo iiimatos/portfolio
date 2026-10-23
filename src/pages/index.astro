@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import Terminal from "../components/Terminal.astro";
 import WorkCard from "../components/WorkCard.astro";
-import { approach, expertise, experience } from "../data/site";
+import { approach, contact, expertise, experience } from "../data/site";
 
 const projects = (await getCollection("projects")).sort(
   (first, second) => first.data.order - second.data.order,
@@ -296,30 +296,73 @@ const projects = (await getCollection("projects")).sort(
 
   <section
     id="contact"
-    class="relative overflow-hidden border-t border-white/[0.08]"
+    class="contact-section relative overflow-hidden border-t border-white/[0.08]"
     aria-labelledby="contact-title"
   >
     <div
-      class="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(52,120,246,0.16),transparent_48%)]"
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_36%,rgba(115,87,246,0.18),transparent_52%)]"
     >
     </div>
     <div
-      class="container-wide relative flex flex-col justify-between gap-12 py-24 md:flex-row md:items-end md:py-32"
+      class="container-wide relative grid gap-14 py-24 md:grid-cols-[1.15fr_0.85fr] md:items-end md:gap-20 md:py-32"
     >
       <div class="reveal">
-        <p class="eyebrow">06 / Contact</p><h2
+        <p class="eyebrow">07 / Contact</p>
+        <h2
           id="contact-title"
           class="mt-7 max-w-[720px] text-5xl font-extrabold leading-[0.9] tracking-[-0.09em] text-white sm:text-7xl"
         >
-          Have a good<br /><em class="text-zinc-300">problem?</em>
+          Have something<br /><em class="text-zinc-300">in mind?</em>
         </h2>
       </div>
-      <div class="reveal max-w-[300px] md:pb-1">
+      <div class="contact-details reveal">
+        <p class="contact-headline">
+          Let's build something <em>meaningful.</em>
+        </p>
+        <p class="contact-description">
+          Whether it's an engineering challenge, a product idea, or an opportunity to collaborate, I'm always open to meaningful conversations.
+        </p>
+        <a class="button-primary contact-primary-cta mt-7" href={`mailto:${contact.email}`}>
+          Get in touch <span aria-hidden="true">&#8599;</span>
+        </a>
+        <nav class="contact-links" aria-label="Professional presence">
+          <ul>
+            <li>
+              <a class="contact-link" href={`mailto:${contact.email}`}>
+                <span>Email</span><span class="contact-link-value">{contact.email}</span>
+              </a>
+            </li>
+            <li>
+              {contact.github ? (
+                <a class="contact-link" href={contact.github} target="_blank" rel="noopener noreferrer">
+                  <span>GitHub</span><span class="contact-link-value">Open profile &#8599;</span>
+                </a>
+              ) : (
+                <span class="contact-link contact-link-pending" aria-disabled="true">
+                  <span>GitHub</span><span class="contact-link-value">Profile pending</span>
+                </span>
+              )}
+            </li>
+            <li>
+              {contact.linkedin ? (
+                <a class="contact-link" href={contact.linkedin} target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn</span><span class="contact-link-value">Open profile &#8599;</span>
+                </a>
+              ) : (
+                <span class="contact-link contact-link-pending" aria-disabled="true">
+                  <span>LinkedIn</span><span class="contact-link-value">Profile pending</span>
+                </span>
+              )}
+            </li>
+          </ul>
+        </nav>
+        <div hidden>
         <p class="text-sm leading-7 text-zinc-400">
           Tell me what you are building, what is getting in the way, and what
           better could look like.
         </p><a class="button-primary mt-7" href="mailto:hello@ivanmatos.dev"
           >Email Ivan <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </div>
   </section>

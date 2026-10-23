@@ -6,6 +6,12 @@ export const navigation = [
   { label: 'Contact', href: '#contact' },
 ] as const;
 
+export const contact = {
+  email: 'ivanmatosvillar@gmail.com',
+  github: 'https://github.com/iiimatos',
+  linkedin: 'https://www.linkedin.com/in/ivan-ernesto-matos-villar-a00b581b3/',
+} as const;
+
 export const expertise = [
   {
     number: '01',
