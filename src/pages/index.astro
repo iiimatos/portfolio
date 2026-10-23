@@ -115,24 +115,33 @@ const projects = (await getCollection("projects")).filter(
     <SectionHeading
       id="about-heading"
       eyebrow="01 / About"
-      title="Make it useful. Make it last."
+      title="Beyond the code."
     />
-    <div class="reveal max-w-[590px] md:pt-10">
+    <div class="reveal max-w-[620px] md:pt-8">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-[0.1em] text-zinc-300">
+        <span>Ivan Matos</span>
+        <span class="text-violet-300">/</span>
+        <span class="text-zinc-500">Software Engineer &amp; Founder</span>
+      </div>
       <p
-        class="text-2xl font-semibold leading-[1.25] tracking-[-0.05em] text-white sm:text-3xl"
+        class="mt-8 text-2xl font-semibold leading-[1.25] tracking-[-0.05em] text-white sm:text-3xl"
       >
-        Good software is a conversation between an idea and its constraints.
+        I'm Ivan Matos, a software engineer and founder passionate about building digital products from the ground up.
       </p>
-      <p class="mt-7 text-[15px] leading-8 text-zinc-400">
-        I care about the invisible work that makes a product feel inevitable:
-        the right boundary, the readable API, the thoughtful empty state. My
-        practice sits between engineering and product, where decisions become
-        systems and systems become experiences.
+      <p class="mt-6 text-[15px] leading-8 text-zinc-400">
+        I work across backend engineering, frontend development, and software architecture, turning complex challenges into reliable, scalable, and thoughtfully designed solutions.
       </p>
       <p class="mt-5 text-[15px] leading-8 text-zinc-400">
-        This portfolio is a living workspace. It is intentionally precise about
-        what is verified and what still needs to be filled in.
+        Beyond my professional work, I'm building Mingo, an independent software ecosystem where I explore product development, system design, and the challenges of turning ideas into real businesses.
       </p>
+      <div class="mt-9 border-t border-white/[0.1] pt-5">
+        <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-zinc-500">Specialties</p>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-3">
+          <li class="border-l border-violet-400/70 pl-3 text-sm text-zinc-200">Software Engineering</li>
+          <li class="border-l border-violet-400/70 pl-3 text-sm text-zinc-200">Product Development</li>
+          <li class="border-l border-violet-400/70 pl-3 text-sm text-zinc-200">System Architecture</li>
+        </ul>
+      </div>
     </div>
   </section>
 
