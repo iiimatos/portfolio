@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import Terminal from "../components/Terminal.astro";
 import WorkCard from "../components/WorkCard.astro";
-import { expertise, experience, process } from "../data/site";
+import { approach, expertise, experience } from "../data/site";
 
 const projects = (await getCollection("projects")).sort(
   (first, second) => first.data.order - second.data.order,
@@ -154,13 +154,12 @@ const projects = (await getCollection("projects")).sort(
       <SectionHeading
         id="expertise-heading"
         eyebrow="02 / Expertise"
-        title="The shape of the work matters."
-        description="A practical set of disciplines for turning complex product problems into calm, maintainable software."
+        title="What I bring to the table."
       />
-      <div class="mt-16 grid border-t border-white/[0.1] md:grid-cols-2">
+      <div class="expertise-grid mt-16">
         {
           expertise.map((item) => (
-            <article class="reveal border-b border-white/[0.1] py-7 md:nth-[odd]:border-r md:nth-[odd]:pr-8 md:nth-[even]:pl-8">
+            <article class="expertise-item reveal">
               <div class="flex items-start justify-between gap-4">
                 <>
                   <span class="font-mono text-[10px] text-violet-300">
@@ -273,31 +272,22 @@ const projects = (await getCollection("projects")).sort(
   </section>
 
   <section
-    id="process"
+    id="approach"
     class="container-wide py-24 md:py-32"
-    aria-labelledby="process-heading"
+    aria-labelledby="approach-heading"
   >
     <SectionHeading
-      id="process-heading"
-      eyebrow="05 / Process"
-      title="Small loops. Strong foundations."
-      description="The process stays flexible, but the principles stay visible."
+      id="approach-heading"
+      eyebrow="05 / Engineering approach"
+      title="How I build."
     />
-    <div
-      class="mt-14 grid border-t border-white/[0.1] sm:grid-cols-2 lg:grid-cols-4"
-    >
+    <div class="approach-list mt-14">
       {
-        process.map(([number, title, description]) => (
-          <article class="reveal border-b border-white/[0.1] py-7 sm:px-5 sm:nth-[odd]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
-            <>
-              <span class="font-mono text-[10px] text-violet-300">
-                {number}
-              </span>
-              <h3 class="mt-12 text-xl font-bold tracking-[-0.05em] text-white">
-                {title}
-              </h3>
-              <p class="mt-3 text-sm leading-7 text-zinc-400">{description}</p>
-            </>
+        approach.map(([number, title, description]) => (
+          <article class="approach-item reveal">
+            <span class="approach-number">{number}</span>
+            <h3 class="text-xl font-bold tracking-[-0.05em] text-white">{title}</h3>
+            <p class="text-sm leading-7 text-zinc-400">{description}</p>
           </article>
         ))
       }

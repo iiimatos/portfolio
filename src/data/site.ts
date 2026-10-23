@@ -2,34 +2,34 @@ export const navigation = [
   { label: 'About', href: '#about' },
   { label: 'Expertise', href: '#expertise' },
   { label: 'Work', href: '#work' },
-  { label: 'Process', href: '#process' },
+  { label: 'Approach', href: '#approach' },
   { label: 'Contact', href: '#contact' },
 ] as const;
 
 export const expertise = [
   {
     number: '01',
-    title: 'Backend systems',
-    description: 'APIs and services that stay understandable as products and teams grow.',
-    tools: ['TypeScript', 'Node.js', 'PostgreSQL'],
+    title: 'Backend Engineering',
+    description: 'APIs, business logic, enterprise integrations, relational databases, and reliable backend services.',
+    tools: ['TypeScript', 'Node.js', 'NestJS', 'C#', '.NET', 'PostgreSQL'],
   },
   {
     number: '02',
-    title: 'Frontend craft',
-    description: 'Interfaces with a clear point of view, fast feedback, and considered details.',
-    tools: ['Astro', 'CSS', 'Web platform'],
+    title: 'Frontend Engineering',
+    description: 'Modern web applications, component architecture, accessible interfaces, and user experience.',
+    tools: ['HTML', 'CSS', 'TailwindCSS', 'JavaScript', 'React', 'Next.js', 'Astro'],
   },
   {
     number: '03',
-    title: 'Architecture',
-    description: 'Boundaries, decisions, and systems designed around the real shape of a problem.',
-    tools: ['DDD', 'Event flows', 'Documentation'],
+    title: 'Software Architecture',
+    description: 'Domain modeling, Clean Architecture, modular systems, and maintainable technical decisions.',
+    tools: ['Clean Architecture', 'DDD', 'SOLID', 'Event-Driven Architecture', 'RBAC'],
   },
   {
     number: '04',
-    title: 'Infrastructure',
-    description: 'Deployment paths that make shipping boring, observable, and repeatable.',
-    tools: ['Docker', 'CI/CD', 'Linux'],
+    title: 'Infrastructure & Delivery',
+    description: 'Containerization, CI/CD, deployment workflows, and application operations.',
+    tools: ['Docker', 'Git', 'Linux', 'GitHub', 'GitHub Actions', 'Dokploy', 'Oracle Cloud'],
   },
 ] as const;
 
@@ -61,9 +61,8 @@ export const experience = [
   },
 ] as const;
 
-export const process = [
-  ['01', 'Frame', 'Make the problem, constraints, and definition of done explicit.'],
-  ['02', 'Shape', 'Explore the smallest useful system and make trade-offs visible.'],
-  ['03', 'Build', 'Work in tight loops: a solid foundation, useful increments, clean edges.'],
-  ['04', 'Refine', 'Remove friction, document the why, and leave the next step clearer.'],
+export const approach = [
+  ['01', 'Understand the problem', 'Good software starts with understanding what needs to be solved.'],
+  ['02', 'Design with intention', 'Architecture should support the product, not complicate it.'],
+  ['03', 'Build for evolution', 'Reliable systems are designed to adapt as requirements change.'],
 ] as const;
